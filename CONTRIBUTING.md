@@ -1,11 +1,3 @@
-## CONTRIBUTING
+# Contributing guidelines
 
-This repository is maintained by the Terraform Baseline team.
-
-### Steps
-
-1. Create a new branch.
-1. Commit your changes.
-1. Create a pull request.
-1. Request a review.
-1. Once approved, merge to branch `main`.
+This project has adopted the [Equinor Terraform Baseline contributing guidelines](https://github.com/equinor/terraform-baseline/blob/main/CONTRIBUTING.md).
