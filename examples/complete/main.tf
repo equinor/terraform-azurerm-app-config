@@ -1,5 +1,9 @@
 provider "azurerm" {
-  features {}
+  features {
+    app_configuration {
+      purge_soft_delete_on_destroy = false
+    }
+  }
 }
 
 locals {
