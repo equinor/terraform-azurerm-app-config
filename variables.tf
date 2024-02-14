@@ -1,5 +1,11 @@
 variable "store_name" {
   description = "The name of this App Configuration store."
+  type        = string
+
+  validation {
+    condition     = length(var.store_name) >= 5 && length(var.store_name) <= 50
+    error_message = "The name must be between 5 and 50 characters."
+  }
 }
 
 variable "resource_group_name" {
@@ -21,6 +27,11 @@ variable "sku" {
   description = "The SKU of this App Configuration store."
   type        = string
   default     = "standard"
+
+  validation {
+    condition     = contains(["free", "standard"], var.sku)
+    error_message = "Sku must be \"free\" or \"standard\"."
+  }
 }
 
 variable "local_auth_enabled" {
@@ -30,9 +41,14 @@ variable "local_auth_enabled" {
 }
 
 variable "soft_delete_retention_days" {
-  description = "The number of days that items should be retained for once soft-deleted"
+  description = "The number of days that items should be retained for once soft-deleted."
   type        = number
   default     = 7
+
+  validation {
+    condition     = var.soft_delete_retention_days >= 1 && var.soft_delete_retention_days <= 7
+    error_message = "The soft delete retention days must be between 1 and 7."
+  }
 }
 
 variable "purge_protection_enabled" {

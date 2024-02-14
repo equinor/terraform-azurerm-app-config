@@ -4,7 +4,7 @@ resource "azurerm_app_configuration" "this" {
   location                   = var.location
   sku                        = var.sku
   local_auth_enabled         = var.local_auth_enabled
-  soft_delete_retention_days = var.soft_delete_retention_days
+  soft_delete_retention_days = var.sku == "standard" ? var.soft_delete_retention_days : null
   purge_protection_enabled   = var.purge_protection_enabled
   public_network_access      = var.public_network_access
 
