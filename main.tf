@@ -1,3 +1,7 @@
+locals {
+  diagnostic_setting_metric_categories = ["AllMetrics"]
+}
+
 resource "azurerm_app_configuration" "this" {
   name                       = var.store_name
   resource_group_name        = var.resource_group_name
@@ -24,8 +28,13 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
     }
   }
 
-  metric {
-    category = "AllMetrics"
-    enabled  = true
+  dynamic "metric" {
+    for_each = toset(concat(local.diagnostic_setting_metric_categories, var.diagnostic_setting_enabled_metric_categories))
+
+    content {
+      # Azure expects explicit configuration of both enabled and disabled metric categories.
+      category = metric.value
+      enabled  = contains(var.diagnostic_setting_enabled_metric_categories, metric.value)
+    }
   }
 }
