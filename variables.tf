@@ -59,6 +59,12 @@ variable "diagnostic_setting_enabled_log_categories" {
   default     = ["Audit"]
 }
 
+variable "diagnostic_setting_enabled_metric_categories" {
+  description = "A list of metric categories to be enabled for this diagnostic setting."
+  type        = list(string)
+  default     = []
+}
+
 variable "tags" {
   description = "A map of tags to assign to the resources."
   type        = map(string)
