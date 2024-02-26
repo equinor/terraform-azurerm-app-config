@@ -16,21 +16,25 @@ output "endpoint" {
 output "primary_read_key" {
   description = "The primary read key of this App Configuration store."
   value       = azurerm_app_configuration.this.primary_read_key
+  sensitive   = true
 }
 
 output "primary_write_key" {
   description = "The primary write key of this App Configuration store."
   value       = azurerm_app_configuration.this.primary_write_key
+  sensitive   = true
 }
 
 output "secondary_read_key" {
   description = "The secondary read key of this App Configuration store."
   value       = azurerm_app_configuration.this.secondary_read_key
+  sensitive   = true
 }
 
 output "secondary_write_key" {
   description = "The secondary write key of this App Configuration store."
   value       = azurerm_app_configuration.this.secondary_write_key
+  sensitive   = true
 }
 
 output "indetity_principal_id" {
