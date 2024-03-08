@@ -25,5 +25,6 @@ module "app_config" {
   store_name                 = "appcs-${random_id.example.hex}"
   resource_group_name        = var.resource_group_name
   location                   = var.location
+  sku                        = "free"
   log_analytics_workspace_id = module.log_analytics.workspace_id
 }
