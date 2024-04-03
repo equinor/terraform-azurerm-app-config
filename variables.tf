@@ -24,7 +24,7 @@ variable "log_analytics_workspace_id" {
 }
 
 variable "sku" {
-  description = "The SKU of this App Configuration store."
+  description = "The SKU of this App Configuration store. Value must be \"free\" or \"standard\"."
   type        = string
   default     = "standard"
 
