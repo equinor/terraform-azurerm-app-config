@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.1.0...v1.2.0) (2024-04-03)
+
+
+### Features
+
+* add validation for store_name, sku, and soft_delete_retention_days variables ([#19](https://github.com/equinor/terraform-azurerm-app-config/issues/19)) ([6461a92](https://github.com/equinor/terraform-azurerm-app-config/commit/6461a929a9c0e9a2f7c93df4a391532e2cbbdfc9))
+
+
+### Bug Fixes
+
+* validate variable values ([#27](https://github.com/equinor/terraform-azurerm-app-config/issues/27)) ([85b5bea](https://github.com/equinor/terraform-azurerm-app-config/commit/85b5beaacdf7f321a713c6d3b65db57d2adde0e8))
+
 ## [1.1.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.0.1...v1.1.0) (2024-02-26)
 
 
