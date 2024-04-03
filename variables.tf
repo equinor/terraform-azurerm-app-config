@@ -41,7 +41,7 @@ variable "local_auth_enabled" {
 }
 
 variable "soft_delete_retention_days" {
-  description = "The number of days that items should be retained for once soft-deleted."
+  description = "The number of days that items should be retained for once soft-deleted. Value must be between 1 and 7."
   type        = number
   default     = 7
 
