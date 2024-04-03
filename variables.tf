@@ -24,7 +24,7 @@ variable "log_analytics_workspace_id" {
 }
 
 variable "sku" {
-  description = "The SKU of this App Configuration store."
+  description = "The SKU of this App Configuration store. Value must be \"free\" or \"standard\"."
   type        = string
   default     = "standard"
 
@@ -41,7 +41,7 @@ variable "local_auth_enabled" {
 }
 
 variable "soft_delete_retention_days" {
-  description = "The number of days that items should be retained for once soft-deleted."
+  description = "The number of days that items should be retained for once soft-deleted. Value must be between 1 and 7."
   type        = number
   default     = 7
 
@@ -58,9 +58,14 @@ variable "purge_protection_enabled" {
 }
 
 variable "public_network_access" {
-  description = "The public network access setting for this App Configuration store."
+  description = "The public network access setting for this App Configuration store. Value must be \"Enabled\" or \"Disabled\"."
   type        = string
   default     = "Enabled"
+
+  validation {
+    condition     = contains(["Enabled", "Disabled"], var.public_network_access)
+    error_message = "Public network access must be \"Enabled\" or \"Disabled\"."
+  }
 }
 
 variable "diagnostic_setting_name" {
