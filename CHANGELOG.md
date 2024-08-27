@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.2.0...v1.2.1) (2024-08-27)
+
+
+### Documentation
+
+* update variable descriptions and add features list ([#33](https://github.com/equinor/terraform-azurerm-app-config/issues/33)) ([233fbeb](https://github.com/equinor/terraform-azurerm-app-config/commit/233fbeb6a15c3e71c9d7ef0c6930be47f5986c0a))
+
 ## [1.2.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.1.0...v1.2.0) (2024-04-03)
 
 
