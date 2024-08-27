@@ -6,6 +6,11 @@
 
 Terraform module which creates Azure App Configuration resources.
 
+## Features
+
+- Microsoft Entra authorization enforced by default.
+- Audit logs sent to given Log Analytics workspace by default.
+
 ## Development
 
 1. Read [this document](https://code.visualstudio.com/docs/devcontainers/containers).
