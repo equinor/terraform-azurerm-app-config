@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.2.1...v1.3.0) (2024-10-09)
+
+
+### Features
+
+* prevent accidental destroy of store ([#35](https://github.com/equinor/terraform-azurerm-app-config/issues/35)) ([4fbf771](https://github.com/equinor/terraform-azurerm-app-config/commit/4fbf771fddc34146902cb6cac38169e91127efa8))
+
 ## [1.2.1](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.2.0...v1.2.1) (2024-08-27)
 
 
