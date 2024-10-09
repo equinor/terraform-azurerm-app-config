@@ -13,6 +13,11 @@ resource "azurerm_app_configuration" "this" {
   public_network_access      = var.public_network_access
 
   tags = var.tags
+
+  lifecycle {
+    # Prevent accidental destroy of App Configuration store.
+    prevent_destroy = true
+  }
 }
 
 resource "azurerm_monitor_diagnostic_setting" "this" {
