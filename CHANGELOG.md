@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.3.0...v1.4.0) (2024-10-14)
+
+
+### Features
+
+* configure identity ([#37](https://github.com/equinor/terraform-azurerm-app-config/issues/37)) ([74685fc](https://github.com/equinor/terraform-azurerm-app-config/commit/74685fc6df5311448c595f11c674082d604098ef))
+
 ## [1.3.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.2.1...v1.3.0) (2024-10-09)
 
 
