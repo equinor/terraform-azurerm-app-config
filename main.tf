@@ -1,4 +1,9 @@
 locals {
+  # If system_assigned_identity_enabled is true, value is "SystemAssigned".
+  # If identity_ids is non-empty, value is "UserAssigned".
+  # If system_assigned_identity_enabled is true and identity_ids is non-empty, value is "SystemAssigned, UserAssigned".
+  identity_type = join(", ", compact([var.system_assigned_identity_enabled ? "SystemAssigned" : "", length(var.identity_ids) > 0 ? "UserAssigned" : ""]))
+
   diagnostic_setting_metric_categories = ["AllMetrics"]
 }
 
@@ -14,9 +19,13 @@ resource "azurerm_app_configuration" "this" {
 
   tags = var.tags
 
-  identity {
-    type         = length(var.identity_ids) > 0 ? "SystemAssigned, UserAssigned" : "SystemAssigned"
-    identity_ids = var.identity_ids
+  dynamic "identity" {
+    for_each = local.identity_type != "" ? [0] : []
+
+    content {
+      type         = local.identity_type
+      identity_ids = var.identity_ids
+    }
   }
 
   lifecycle {
