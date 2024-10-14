@@ -66,7 +66,7 @@ variable "purge_protection_enabled" {
 }
 
 variable "identity_ids" {
-  description = "A list of IDs of managed identities to be assigned to this Web App."
+  description = "A list of IDs of managed identities to be assigned to this App Configuration store."
   type        = list(string)
   default     = []
   nullable    = false
