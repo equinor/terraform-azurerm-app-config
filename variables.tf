@@ -65,6 +65,13 @@ variable "purge_protection_enabled" {
   nullable    = false
 }
 
+variable "identity_ids" {
+  description = "A list of IDs of managed identities to be assigned to this Web App."
+  type        = list(string)
+  default     = []
+  nullable    = false
+}
+
 variable "public_network_access" {
   description = "The public network access setting for this App Configuration store. Value must be \"Enabled\" or \"Disabled\"."
   type        = string

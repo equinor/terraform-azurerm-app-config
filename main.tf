@@ -14,6 +14,11 @@ resource "azurerm_app_configuration" "this" {
 
   tags = var.tags
 
+  identity {
+    type         = length(var.identity_ids) > 0 ? "SystemAssigned, UserAssigned" : "SystemAssigned"
+    identity_ids = var.identity_ids
+  }
+
   lifecycle {
     # Prevent accidental destroy of App Configuration store.
     prevent_destroy = true
