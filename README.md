@@ -1,8 +1,9 @@
 # Terraform module for Azure App Configuration
 
-[![SCM Compliance](https://scm-compliance-api.radix.equinor.com/repos/equinor/terraform-azurerm-app-config/badge)](https://scm-compliance-api.radix.equinor.com/repos/equinor/terraform-azurerm-app-config/badge)
-[![Equinor Terraform Baseline](https://img.shields.io/badge/Equinor%20Terraform%20Baseline-1.0.0-blueviolet)](https://github.com/equinor/terraform-baseline)
-[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![GitHub License](https://img.shields.io/github/license/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/blob/main/LICENSE)
+[![GitHub Release](https://img.shields.io/github/v/release/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/releases/latest)
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+[![SCM Compliance](https://scm-compliance-api.radix.equinor.com/repos/equinor/terraform-azurerm-app-config/badge)](https://developer.equinor.com/governance/scm-policy/)
 
 Terraform module which creates Azure App Configuration resources.
 
@@ -11,46 +12,41 @@ Terraform module which creates Azure App Configuration resources.
 - Microsoft Entra authorization enforced by default.
 - Audit logs sent to given Log Analytics workspace by default.
 
-## Development
+## Prerequisites
 
-1. Read [this document](https://code.visualstudio.com/docs/devcontainers/containers).
+- Azure role `Contributor` at the resource group scope.
 
-1. Clone this repository.
+## Usage
 
-1. Configure Terraform variables in a file `.devcontainer/devcontainer.env`:
+```terraform
+provider "azurerm" {
+  features {}
+}
 
-    ```env
-    TF_VAR_resource_group_name=
-    TF_VAR_location=
-    ```
+module "app_config" {
+  source  = "equinor/app-config/azurerm"
+  version = "~> 1.4"
 
-1. Open repository in dev container.
+  store_name                 = "example-store"
+  resource_group_name        = azurerm_resource_group.example.name
+  location                   = azurerm_resource_group.example.location
+  log_analytics_workspace_id = module.log_analytics.workspace_id
+}
 
-## Testing
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "westeurope"
+}
 
-1. Change to the test directory:
+module "log_analytics" {
+  source  = "equinor/log-analytics/azurerm"
+  version = "~> 2.0"
 
-    ```console
-    cd test
-    ```
-
-1. Login to Azure:
-
-    ```console
-    az login
-    ```
-
-1. Set active subscription:
-
-    ```console
-    az account set -s <SUBSCRIPTION_NAME_OR_ID>
-    ```
-
-1. Run tests:
-
-    ```console
-    go test -timeout 60m
-    ```
+  workspace_name      = "example-workspace"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+}
+```
 
 ## Contributing
 
