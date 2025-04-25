@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.4.2](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.4.0...v1.4.2) (2025-04-25)
+
+
+### Documentation
+
+* add missing prereq in README ([5d91d7b](https://github.com/equinor/terraform-azurerm-app-config/commit/5d91d7b27cef9a54e1f7722dc559a964c33e39b6))
+* update README ([e193145](https://github.com/equinor/terraform-azurerm-app-config/commit/e19314564d98b5e6a1772bf03db2abca4e124200))
+
 ## [1.4.1](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.4.0...v1.4.1) (2025-04-25)
 
 
