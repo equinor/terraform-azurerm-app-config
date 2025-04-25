@@ -15,6 +15,7 @@ Terraform module which creates Azure App Configuration resources.
 ## Prerequisites
 
 - Azure role `Contributor` at the resource group scope.
+- Azure role `Log Analytics Contributor` at the Log Analytics workspace scope.
 
 ## Usage
 
