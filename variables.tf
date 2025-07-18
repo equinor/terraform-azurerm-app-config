@@ -34,8 +34,8 @@ variable "sku" {
   nullable    = false
 
   validation {
-    condition     = contains(["free", "standard"], var.sku)
-    error_message = "Sku must be \"free\" or \"standard\"."
+    condition     = contains(["free", "developer", "standard", "premium"], var.sku)
+    error_message = "Sku must be \"free\", \"developer\", \"standard\", or \"premium\"."
   }
 }
 
