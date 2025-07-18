@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.4.2...v1.5.0) (2025-07-18)
+
+
+### Features
+
+* update SKU validation to include developer and premium options ([#41](https://github.com/equinor/terraform-azurerm-app-config/issues/41)) ([30429e2](https://github.com/equinor/terraform-azurerm-app-config/commit/30429e2ae615a7b3abb180cf9871aab8771022e7))
+
 ## [1.4.2](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.4.0...v1.4.2) (2025-04-25)
 
 
