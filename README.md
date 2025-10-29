@@ -1,12 +1,5 @@
 # Terraform module for Azure App Configuration
 
-[![GitHub Release](https://img.shields.io/github/v/release/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/releases/latest)
-[![Terraform Module Downloads](https://img.shields.io/terraform/module/dt/equinor/app-config/azurerm)](https://registry.terraform.io/modules/equinor/app-config/azurerm/latest)
-[![GitHub contributors](https://img.shields.io/github/contributors/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/graphs/contributors)
-[![GitHub Issues](https://img.shields.io/github/issues/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/issues)
-[![GitHub Pull requests](https://img.shields.io/github/issues-pr/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/pulls)
-[![GitHub License](https://img.shields.io/github/license/equinor/terraform-azurerm-app-config)](https://github.com/equinor/terraform-azurerm-app-config/blob/main/LICENSE)
-
 Terraform module which creates Azure App Configuration resources.
 
 ## Features
