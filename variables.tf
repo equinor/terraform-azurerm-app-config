@@ -118,3 +118,10 @@ variable "tags" {
   default     = {}
   nullable    = false
 }
+
+variable "prevent_destroy" {
+  description = "Overwrite the lifecycle prevent_destroy option for the App Configuration store resource."
+  type        = bool
+  default     = true
+  nullable    = false
+}
