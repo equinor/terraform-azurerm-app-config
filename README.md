@@ -16,7 +16,7 @@ Terraform module which creates Azure App Configuration resources.
 
 ```terraform
 terraform {
-  required_version = "> 1.15.0"
+  required_version = ">= 1.1.0, < 2.0.0"
 
   required_providers {
     azurerm = {
