@@ -1,9 +1,5 @@
 provider "azurerm" {
-  features {
-    app_configuration {
-      purge_soft_delete_on_destroy = false
-    }
-  }
+  features {}
 }
 
 resource "random_id" "example" {
@@ -11,7 +7,7 @@ resource "random_id" "example" {
 }
 
 module "log_analytics" {
-  source = "github.com/equinor/terraform-azurerm-log-analytics?ref=v1.5.0"
+  source = "github.com/equinor/terraform-azurerm-log-analytics?ref=v2.5.0"
 
   workspace_name      = "log-${random_id.example.hex}"
   resource_group_name = var.resource_group_name
