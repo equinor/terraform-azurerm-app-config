@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.5.0...v1.5.1) (2026-08-04)
+
+
+### Code Refactoring
+
+* accommodate azurerm upgrade to v5.0.0 ([#44](https://github.com/equinor/terraform-azurerm-app-config/issues/44)) ([a094b8b](https://github.com/equinor/terraform-azurerm-app-config/commit/a094b8b9decf9997e941bd2d55cded51dac5722b))
+
 ## [1.5.0](https://github.com/equinor/terraform-azurerm-app-config/compare/v1.4.2...v1.5.0) (2025-07-18)
 
 
