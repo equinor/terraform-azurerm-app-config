@@ -22,7 +22,7 @@ resource "azurerm_app_configuration" "this" {
 
     content {
       type         = local.identity_type
-      identity_ids = length(var.identity_ids) > 0 ? var.identity_ids : null
+      identity_ids = var.identity_ids
     }
   }
 
